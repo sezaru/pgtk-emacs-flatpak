@@ -3,6 +3,7 @@
     "runtime" : "org.gnome.Sdk",
     "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
+    "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
     "command": "emacs",
     "rename-icon": "emacs",
     "rename-appdata-file": "emacs.metainfo.xml",
@@ -243,7 +244,24 @@
 		    ]
 		}
 	    ]
-	}
+	},
+        {
+        "name": "ripgrep",
+        "buildsystem": "simple",
+        "sources": [
+            {
+            "type": "git",
+            "url": "https://github.com/BurntSushi/ripgrep"
+        }
+        ],
+        "build-commands": [
+            "source /usr/lib/sdk/rust-stable/enable.sh && cargo build --release",
+            "install -D target/release/rg /app/bin/rg"
+        ],
+        "build-options": {
+            "build-args": ["--share=network"]
+        }
+    }
     ],
     "cleanup": [
 	"/share/doc",
