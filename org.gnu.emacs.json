@@ -261,6 +261,23 @@
         "build-options": {
             "build-args": ["--share=network"]
         }
+    },
+        {
+        "name": "fd",
+        "buildsystem": "simple",
+        "sources": [
+            {
+            "type": "git",
+            "url": "https://github.com/sharkdp/fd"
+        }
+        ],
+        "build-commands": [
+            "source /usr/lib/sdk/rust-stable/enable.sh && cargo build --release",
+            "install -D target/release/fd /app/bin/fd"
+        ],
+        "build-options": {
+            "build-args": ["--share=network"]
+        }
     }
     ],
     "cleanup": [
