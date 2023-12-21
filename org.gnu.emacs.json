@@ -27,7 +27,8 @@
         "--filesystem=xdg-data/fonts:ro",
         "--filesystem=/tmp",
         "--filesystem=/var/tmp",
-        "--filesystem=xdg-run/gvfs"
+        "--filesystem=xdg-run/gvfs",
+        "--env=GTK_THEME=Adwaita:dark"
     ],
     "env" : {
         "INFOPATH": "/app/share/info"
