@@ -14,7 +14,8 @@ If you'd prefer traditional =./configure && make && make install= all functional
    https://docs.flatpak.org/en/latest/first-build.html
 
 1. =flatpak install org.gnome.Sdk= (might also want to install the relevant theme you prefer)
-2. =flatpak-builder --force-clean --user --install  build-dir org.gnu.emacs.json= - this will take some time
+2. =flatpak install org.freedesktop.Sdk.Extension.rust-stable=
+3. =flatpak-builder --force-clean --user --install  build-dir org.gnu.emacs.json= - this will take some time
 
 Rebuilding is simply repeating step 2
 
